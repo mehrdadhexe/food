@@ -5,8 +5,10 @@
     align-items: flex-start;
     overflow: no-display;
     box-shadow: #000 inset 50;
+    flex-direction: column;
     background: aliceblue;
     position: absolute;
+    display: none;
     background-size: contain;
     IRANSansWeb_Light
 }

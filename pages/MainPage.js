@@ -1,19 +1,15 @@
 import React from 'react';
 import Drawer from 'react-native-drawer';
-import MainScreen from './MainScreen';
-import DetailScreen from './DetailScreen';
-import { Header, Left, Body, Right, Title } from 'native-base';
-import { ScrollView, StatusBar, View } from 'react-native';
+import MainScreen from '../app/MainScreen';
+import DetailScreen from '../app/DetailScreen';
+import { ScrollView, StatusBar, View, TouchableOpacity } from 'react-native';
 import HeaderStyle from '../style/Header.style';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Entypo from 'react-native-vector-icons/Entypo';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import { SliderBox } from 'react-native-image-slider-box';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-// import InputSpinner from 'react-native-input-spinner';
 import Search from '../component/Search';
+import { Actions } from 'react-native-router-flux';
 
-class stackNav extends React.Component {
+class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,19 +56,20 @@ class stackNav extends React.Component {
               style={HeaderStyle.slider}
               images={this.state.images}
             />
-            <SimpleLineIcons
-              name="menu"
-              onPress={this.openMenu}
-              style={HeaderStyle.btr}
-            />
-            <SimpleLineIcons name="basket-loaded" style={HeaderStyle.btl} />
+            <TouchableOpacity style={HeaderStyle.btr} onPress={this.openMenu}>
+              <SimpleLineIcons style={HeaderStyle.icon_headr} name="menu"  />
+            </TouchableOpacity>
+            <TouchableOpacity style={HeaderStyle.btl} onPress={()=>{Actions.cart_page()}}>
+              <SimpleLineIcons name="basket-loaded" style={HeaderStyle.icon_headr} />
+            </TouchableOpacity>
+
           </View>
 
           <Search />
           <View style={drawerStyles.scrollWarp}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <MainScreen />
-              <MainScreen />
+
             </ScrollView>
           </View>
         </Drawer>
@@ -84,7 +81,6 @@ class stackNav extends React.Component {
 const drawerStyles = {
   drawer: {
     shadowColor: '#000000',
-    backgroundColor: '#ff1123',
     shadowOpacity: 0.8,
     shadowRadius: 3,
   },
@@ -95,4 +91,4 @@ const drawerStyles = {
   },
   main: { paddingLeft: 0 },
 };
-export default stackNav;
+export default MainPage;

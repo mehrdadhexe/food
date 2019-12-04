@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import HeaderStyle from '../app/Header.style';
+import HeaderStyle from '../style/Header.style';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import HeadShop from '../component/HeadShop';
 

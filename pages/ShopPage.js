@@ -11,7 +11,7 @@ import CounterItem from '../component/CounterItem';
 import CardItemShop from '../component/CardItemShop';
 import CartBt from '../component/CartBt';
 const HEADER_MAX_HEIGHT = 300;
-const HEADER_MIN_HEIGHT = 50;
+const HEADER_MIN_HEIGHT = 0;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT + 100;
 
 class ShopPage extends React.Component {
@@ -117,6 +117,15 @@ class ShopPage extends React.Component {
               <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
               <CardItemShop foodImage={require('../res/img/slide3.jpg')} />
               <CardItemShop foodImage={require('../res/img/slide4.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
+              <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
               <CardItemShop foodImage={require('../res/img/slide2.jpg')} />
 
             </ScrollView>

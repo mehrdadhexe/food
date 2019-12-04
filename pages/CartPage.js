@@ -5,11 +5,42 @@ import {
   ImageBackground,
   TextInput,
   Image,
+  Keyboard,
+  TouchableOpacity,
+  BackHandler,
   Button,
 } from 'react-native';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import { Actions } from 'react-native-router-flux';
 
 class CartPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display_keyboard: 'flex',
+      display_keyboard_target: 0,
+      height: 0,
+      flex: 3,
+    };
+  }
+  showCheckout() {
+    Actions.checkout_page();
+  }
+  componentDidMount() {
+
+    Keyboard.addListener('keyboardDidHide', () => {
+      this.setState({ display_keyboard: 'flex' });
+    });
+    Keyboard.addListener('keyboardDidShow', () => {
+      this.setState({ display_keyboard: 'none' });
+    });
+  }
+    setKeyName(e){
+      console.log("kdjs")
+    }
+  onChangeKey(e) {
+    console.log(e.nativeEvent.selection.start);
+  }
   render() {
     return (
       <ImageBackground
@@ -27,10 +58,9 @@ class CartPage extends Component {
             <View />
           </View>
 
-          <View style={{ flex: 3, backgroundColor: 'transparent' }}>
+          <View style={{ backgroundColor: 'transparent' }}>
             <View
               style={{
-                flex: 3,
                 margin: 15,
                 elevation: 10,
                 borderRadius: 5,
@@ -38,6 +68,7 @@ class CartPage extends Component {
               }}>
               <TextInput
                 style={{
+                  height: 100,
                   padding: 20,
                   fontFamily: 'IRANSansWeb_Light',
                   textAlign: 'right',
@@ -45,19 +76,21 @@ class CartPage extends Component {
                 }}
                 placeholderTextColor={'#bbbbbb'}
                 placeholder={'آدرس دقیق خود را وارد کنید'}
+                scrollEnabled={true}
                 multiline={true}
-                numberOfLines={4}
               />
             </View>
           </View>
           <View
             style={{
               flex: 3,
+              display: this.state.display_keyboard,
               flexDirection: 'row',
             }}>
             <View
               style={{
                 flex: 3,
+
                 margin: 5,
                 elevation: 10,
                 borderRadius: 5,
@@ -67,6 +100,7 @@ class CartPage extends Component {
               <View
                 style={{
                   flex: 1,
+
                   flexDirection: 'row',
                   alignItems: 'center',
                   justifyContent: 'space-between',
@@ -146,6 +180,7 @@ class CartPage extends Component {
             <View
               style={{
                 flex: 2,
+
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -164,6 +199,7 @@ class CartPage extends Component {
           <View
             style={{
               flex: 4,
+
               padding: 20,
               flexDirection: 'column',
               justifyContent: 'center',
@@ -173,6 +209,7 @@ class CartPage extends Component {
             <Text
               style={{
                 textAlign: 'center',
+                  display: this.state.display_keyboard,
                 fontFamily: 'IRANSansWeb_Light',
                 fontSize: 18,
               }}>
@@ -198,10 +235,12 @@ class CartPage extends Component {
                   paddingLeft: 10,
                   paddingRight: 10,
                   width: 160,
-
                   height: 35,
                   textAlign: 'right',
                   direction: 'rtl',
+                }}
+                onFocus={e => {
+                  console.log("zZZ");
                 }}
                 placeholderTextColor={'#f1edf2'}
                 placeholder={'کد تخفیف خود را وارد کنید'}
@@ -212,7 +251,7 @@ class CartPage extends Component {
                 title={'ثبت'}
               />
             </View>
-            <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View style={{ flex: 1, display: this.state.display_keyboard, flexDirection: 'row' }}>
               <Text
                 style={{
                   fontFamily: 'IRANSansWeb_Bold',
@@ -221,41 +260,67 @@ class CartPage extends Component {
                 }}>
                 جمع کل:
               </Text>
-              <Text style={{ flex: 1, textAlign: 'right' }}>200 تومان</Text>
+              <Text
+                style={{
+                  flex: 1,
+                  fontFamily: 'IRANSansWeb_Bold',
+                  textAlign: 'right',
+                }}>
+                200 تومان
+              </Text>
             </View>
-            <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View style={{ flex: 1, display: this.state.display_keyboard, flexDirection: 'row' }}>
               <Text
                 style={{
                   fontFamily: 'IRANSansWeb_Bold',
                   flex: 1,
                   textAlign: 'left',
                 }}>
-                تخفیفات
+                تخفیفات:
               </Text>
-              <Text style={{ flex: 1, textAlign: 'right' }}>0</Text>
+              <Text
+                style={{
+                  flex: 1,
+                  fontFamily: 'IRANSansWeb_Bold',
+                  textAlign: 'right',
+                }}>
+                0
+              </Text>
             </View>
-            <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View style={{ flex: 1,  flexDirection: 'row' }}>
               <Text
                 style={{
                   flex: 1,
                   fontFamily: 'IRANSansWeb_Bold',
                   textAlign: 'left',
                 }}>
-                جمع نهایی
+                جمع نهایی:
               </Text>
-              <Text style={{ flex: 1, textAlign: 'right' }}>200 تومان</Text>
+              <Text
+                style={{
+                  flex: 1,
+                  fontFamily: 'IRANSansWeb_Bold',
+                  textAlign: 'right',
+                }}>
+                200 تومان
+              </Text>
             </View>
           </View>
+
           <View
             style={{
               flex: 1,
+              display: this.state.display_keyboard,
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: '#79ffc0',
             }}>
-            <Text style={{ fontFamily: 'IRANSansWeb_Bold', color: '#bebebe' }}>
-              مشاهده صورت حساب
-            </Text>
+            <TouchableOpacity onPress={this.showCheckout}>
+              <Text
+                style={{ fontFamily: 'IRANSansWeb_Bold', color: '#bebebe' }}>
+                مشاهده صورت حساب
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>

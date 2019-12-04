@@ -7,10 +7,6 @@ class CatCard extends Component {
     return (
       <View style={styles.container}>
           <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-
 
 
       </View>
