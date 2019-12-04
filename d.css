@@ -1,0 +1,12 @@
+.c{
+    border: 2px red solid;
+    background: transparent;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow: no-display;
+    box-shadow: #000 inset 50;
+    background: aliceblue;
+    position: absolute;
+    background-size: contain;
+    IRANSansWeb_Light
+}
