@@ -1,7 +1,7 @@
 .c{
     border: 2px red solid;
     background: transparent;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
     overflow: no-display;
     box-shadow: #000 inset 50;

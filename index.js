@@ -4,6 +4,7 @@ import { name as appName } from './app.json';
 import Routes from './Routes/Routes';
 class index extends Component {
   render() {
+     console.disableYellowBox = true;
     return <Routes />;
   }
 }

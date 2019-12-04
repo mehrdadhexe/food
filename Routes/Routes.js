@@ -12,6 +12,7 @@ const Routes = () => (
           key="checkout_page"
           component={CheckoutPage}
           hideNavBar={true}
+
           title="CheckoutPage"
       />
       <Scene

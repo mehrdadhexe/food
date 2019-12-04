@@ -29,6 +29,7 @@ class DetailScreen extends Component {
   openPage(item) {
     if (item == 'cart_page') {
       Actions.cart_page();
+      // onPress={this.openPage(item.event)}
     }
   }
   render() {
@@ -43,7 +44,7 @@ class DetailScreen extends Component {
             { key: 'خروج', event: 'cart_page' },
           ]}
           renderItem={({ item }) => (
-            <Text onPress={this.openPage(item.event)} style={styles.item}>
+            <Text  style={styles.item}>
               {item.key}
             </Text>
           )}
