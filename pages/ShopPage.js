@@ -50,7 +50,7 @@ class ShopPage extends React.Component {
               height: headerHeight,
 
               zIndex: transparent,
-              backgroundImage: { url: '../res/img/slide1.png' },
+              backgroundImage: { url: '../res/img/slide1.jpg' },
             },
           ]}>
           <View
@@ -92,7 +92,7 @@ class ShopPage extends React.Component {
                       justifySelf: 'flex-end',
                       height: 110,
                     }}
-                    source={require('../res/img/slide1.png')}
+                    source={require('../res/img/slide1.jpg')}
                   />
                   <Text
                     style={{
@@ -133,7 +133,7 @@ class ShopPage extends React.Component {
                     <View
                       style={{
                         flex: 1,
-                          paddingLeft:10,
+                        paddingLeft: 10,
                         justifyContent: 'space-evenly',
                         alignItems: 'center',
                         flexDirection: 'row',
@@ -150,7 +150,6 @@ class ShopPage extends React.Component {
                         justifyContent: 'space-evenly',
                         alignItems: 'center',
                         flexDirection: 'row',
-
                       }}>
                       <SimpleLineIcons
                         name="clock"
@@ -170,7 +169,6 @@ class ShopPage extends React.Component {
                         justifyContent: 'space-evenly',
                         alignItems: 'center',
                         flexDirection: 'row',
-
                       }}>
                       <SimpleLineIcons
                         name="cup"
@@ -188,11 +186,11 @@ class ShopPage extends React.Component {
                       <Text
                         style={{
                           borderWidth: 1,
-                            padding:1,
+                          padding: 1,
                           paddingRight: 10,
-                            textAlign:'center',
-alignSelf:'center',
-                            justifySelf:'flex-end',
+                          textAlign: 'center',
+                          alignSelf: 'center',
+                          justifySelf: 'flex-end',
 
                           paddingLeft: 10,
                           borderColor: '#67bd67',
