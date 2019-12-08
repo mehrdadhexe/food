@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
+import PersianText from '../app/PersianText';
 let count = 0;
 class CounterItem extends Component {
   constructor(props) {
@@ -50,9 +51,11 @@ class CounterItem extends Component {
           </Text>
         </View>
         <View>
-          <Text style={{ fontSize: 30, fontFamily: 'IRANSansWeb_Light' }}>
+
+          <Text style={{ fontSize: 30, fontFamily: 'IRANSansAdad' }}>
             {count}
           </Text>
+
         </View>
         <View style={{}}>
           <View

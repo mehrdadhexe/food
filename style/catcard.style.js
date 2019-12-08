@@ -11,11 +11,12 @@ export default {
   },
   bigcattex: {
     position: 'absolute',
+    flex: 1,
+    justifySelf:'center',
+    alignSelf:'center',
     fontFamily: 'IRANSansWeb_Bold',
     color: '#fff',
     fontSize: 25,
-    right: '40%',
-    textAlign: 'center',
   },
   text: {
     color: '#636e72',

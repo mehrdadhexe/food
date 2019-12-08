@@ -2,12 +2,19 @@ import React from 'react';
 import Drawer from 'react-native-drawer';
 import MainScreen from '../app/MainScreen';
 import DetailScreen from '../app/DetailScreen';
-import { ScrollView, StatusBar, View, TouchableOpacity } from 'react-native';
+import {
+  ScrollView,
+  StatusBar,
+  View,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import HeaderStyle from '../style/Header.style';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import { SliderBox } from 'react-native-image-slider-box';
 import Search from '../component/Search';
 import { Actions } from 'react-native-router-flux';
+import CardItem from '../component/CardItem';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -57,19 +64,24 @@ class MainPage extends React.Component {
               images={this.state.images}
             />
             <TouchableOpacity style={HeaderStyle.btr} onPress={this.openMenu}>
-              <SimpleLineIcons style={HeaderStyle.icon_headr} name="menu"  />
+              <SimpleLineIcons style={HeaderStyle.icon_headr} name="menu" />
             </TouchableOpacity>
-            <TouchableOpacity style={HeaderStyle.btl} onPress={()=>{Actions.cart_page()}}>
-              <SimpleLineIcons name="basket-loaded" style={HeaderStyle.icon_headr} />
+            <TouchableOpacity
+              style={HeaderStyle.btl}
+              onPress={() => {
+                Actions.cart_page();
+              }}>
+              <SimpleLineIcons
+                name="basket-loaded"
+                style={HeaderStyle.icon_headr}
+              />
             </TouchableOpacity>
-
           </View>
 
           <Search />
           <View style={drawerStyles.scrollWarp}>
             <ScrollView showsVerticalScrollIndicator={false}>
-              <MainScreen />
-
+             <MainScreen></MainScreen>
             </ScrollView>
           </View>
         </Drawer>

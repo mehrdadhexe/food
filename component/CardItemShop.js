@@ -43,7 +43,7 @@ class CardItemShop extends Component {
 
           <View style={{ flex: 3, flexDirection: 'row', alignItems: 'center' }}>
             <CounterItem />
-            <Text style={{ marginRight: 10, fontFamily: 'IRANSansWeb_Light' }}>
+            <Text style={{ marginRight: 10, fontFamily: 'IRANSansAdad' }}>
               {' '}
               4,500 تومان
             </Text>
